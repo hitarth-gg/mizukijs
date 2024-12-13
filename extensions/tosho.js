@@ -1,4 +1,6 @@
-const TOSHO = decodeURIComponent(atob("aHR0cHM6Ly9mZWVkLmFuaW1ldG9zaG8ub3Jn"));
+import { encUrls } from "./encUrls";
+
+const TOSHO = encUrls.tosho;
 
 function GET_TOSHO_RSS_BY_QUERY(quality = "all", aids, eids) {
   if (eids === 0 || eids === null) {
