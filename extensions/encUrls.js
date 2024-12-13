@@ -1,4 +1,4 @@
-export default encUrls = {
+export default {
   tosho: decodeURIComponent(atob("aHR0cHM6Ly9mZWVkLmFuaW1ldG9zaG8ub3Jn")),
   pahe: decodeURIComponent(atob("aHR0cHM6Ly9hbmltZXBhaGUucnU=")),
   paheimages: decodeURIComponent(atob("aHR0cHM6Ly9pLmFuaW1lcGFoZS5ydQ==")),
