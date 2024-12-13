@@ -1,6 +1,4 @@
-import { encUrls } from "./encUrls";
-
-const TOSHO = encUrls.tosho;
+const TOSHO = decodeURIComponent(atob("aHR0cHM6Ly9mZWVkLmFuaW1ldG9zaG8ub3Jn"));
 
 function GET_TOSHO_RSS_BY_QUERY(quality = "all", aids, eids) {
   if (eids === 0 || eids === null) {
@@ -18,6 +16,18 @@ function GET_TOSHO_RSS(packer = '"[SubsPlease]"') {
 }
 
 export default new (class Tosho {
+  encUrls = {
+    tosho: decodeURIComponent(atob("aHR0cHM6Ly9mZWVkLmFuaW1ldG9zaG8ub3Jn")),
+    pahe: decodeURIComponent(atob("aHR0cHM6Ly9hbmltZXBhaGUucnU=")),
+    paheimages: decodeURIComponent(atob("aHR0cHM6Ly9pLmFuaW1lcGFoZS5ydQ==")),
+    zenshinSupabase: decodeURIComponent(
+      atob("aHR0cHM6Ly96ZW5zaGluLXN1cGFiYXNlLWFwaS5vbnJlbmRlci5jb20=")
+    ),
+    nyaaApi: decodeURIComponent(
+      atob("aHR0cHM6Ly9ueWFhYXBpLm9ucmVuZGVyLmNvbS9ueWFh")
+    ),
+  };
+
   async getToshoEpisodes(quality, aids, eids) {
     try {
       const response = await fetch(GET_TOSHO_RSS_BY_QUERY(quality, aids, eids));
